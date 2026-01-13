@@ -1,1 +1,32 @@
-<p>product-page.component works!</p>,
+@if(productsResorce.isLoading()) {
+  <div class="flex justify-content-center items-center h-screen">
+    <span class="loading loading-spinner loading-lg">
+
+    </span>
+  </div>
+}
+
+@if( productsResorce.hasValue()){
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+    <p>
+      Imagenes
+    </p>
+
+    <div>
+      <h2>
+        {{productsResorce.value()?.title}}
+      </h2>
+
+      <div class="divider"></div>
+
+      <p>
+        {{productsResorce.value()?.description}}
+      </p>
+    </div>
+
+  </div>
+}
+
+
+

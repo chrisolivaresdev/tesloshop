@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { Card } from "../../components/card/card";
 import { ProductService } from '../../../products/services/Product.service';
 import { rxResource } from '@angular/core/rxjs-interop';
+import { Card } from '../../../products/components/card/card';
 @Component({
   selector: 'app-home-page',
   imports: [Card],
@@ -14,7 +14,7 @@ export class HomePageComponent {
   productsResorce = rxResource({
     request: () => ({}),
     loader: ({request}) => {
-      return this.ProductService.getProducts({limit:1});
+      return this.ProductService.getProducts({limit:5});
     },
   })
 
